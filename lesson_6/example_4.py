@@ -16,6 +16,15 @@ class Car:
         self.name = name
         self.is_police = is_police
 
+    def go(self):
+        print(f'Машина поехала со скоростью {self.speed}')
+
+    def stop(self):
+        print('Машина остановилась')
+
+    def turn(self, direction):
+        print(f'Машина повернула на {direction}')
+
     def show_speed(self):
         print(f'Скорость: {self.speed} км/ч')
 
@@ -43,15 +52,21 @@ class PoliceCar(Car):
 
 
 if __name__ == '__main__':
-
     town_car = TownCar(80, 'Blue', 'Smart')
     print(town_car.speed, town_car.color, town_car.name, town_car.is_police)
     town_car.show_speed()
+    town_car.go()
+    town_car.stop()
+    town_car.turn('право')
     print('-' * 100)
+
 
     sport_car = SportCar(250, 'Red', 'Ferrari')
     print(sport_car.speed, sport_car.color, sport_car.name, sport_car.is_police)
     sport_car.show_speed()
+    sport_car.go()
+    sport_car.stop()
+    sport_car.turn('лево')
     print('-' * 100)
 
     work_car = WorkCar(45, 'Yellow', 'CAT')
